@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <math.h>
+
 int main (){
-    int start , end , x , i , rem , sum;
+    int start , end , x , i , rem ,  count , sum;
     printf("Enter the startimg and ending number :");
     scanf("%d %d", &start ,&end);
 
@@ -9,10 +11,18 @@ int main (){
      for( i = start ; i <= end ; i++){
         x = i;
         sum = 0;
+        count = 0;
+
+        while( x != 0){
+            count++;
+            x =  x / 10;
+
+        }
+
 
      while (x > 0){
         rem = x % 10;
-        sum += (rem * rem * rem);
+        sum += pow(rem , count);
         x = x / 10;
     }
 
